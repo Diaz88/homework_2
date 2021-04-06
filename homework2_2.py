@@ -1,5 +1,3 @@
-
-
 class Complex:
 
     def __init__(self, re, im):
@@ -10,14 +8,17 @@ class Complex:
 
         a = self.re + other.re
         b = self.im + other.im
-        return f'{a} + {b} i'
-
+        Complex(a, b)
+        return a + b
+        
         # a = self.re - other.re
         # b = self.im - other.im
-        # return f'{a} + {b} i'
+        # Complex(a, b)
+        # return a + b
 
         # a = self.re + self.im
         # b = other.re + other.im
+        # Complex(a, b)
         # return a * b
 
 
@@ -25,12 +26,14 @@ class Complex:
         # b = other.re + other.im
         # print(a)
         # print('-')
+        # Complex(a, b)
         # return b
 
 
-complex1 = Complex(10, 5)
-complex2 = Complex(22, 8)
+complex1 = Complex(10, 5j)
+complex2 = Complex(22, 8j)
 complex3 = complex1 + complex2
 print(complex3)
+
 
 
