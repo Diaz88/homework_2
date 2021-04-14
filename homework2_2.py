@@ -10,31 +10,32 @@ class Complex:
 
         a = self.re + other.re
         b = self.im + other.im
-        Complex = (a, b)
-        return Complex
+        newcompl = Complex(a, b)
+        return newcompl
 
         # a = self.re - other.re
         # b = self.im - other.im
-        # Complex = (a, b)
-        # return Complex
+        # newcompl = Complex(a, b)
+        # return newcompl
 
         # a = self.re + self.im
         # b = other.re + other.im
-        # Complex = (a, b)
-        # return Complex
+        # newcompl = Complex(a, b)
+        # return newcompl
 
 
         # a = self.re + self.im
         # b = other.re + other.im
         # print(a)
         # print('-')
-        # Complex = (a, b)
-        # return Complex
+        # newcompl = Complex(a, b)
+        # return newcompl
 
+    def __str__(self):
+        return f"{self.re} + {self.im}"
 
 complex1 = Complex(10, 5j)
 complex2 = Complex(22, 8j)
 complex3 = complex1 + complex2
 print(complex3)
-
 
