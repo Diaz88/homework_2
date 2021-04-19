@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My web page</title>
+    <link rel="stylesheet" href="/home/askat/Azix/python courses/Lesson2/style.css">
+</head>
+<body background = "https://i.pinimg.com/564x/63/76/4c/63764c444db30896883d21b3f0638096.jpg">
+<h1><p>Hello Aidar!</p></h1>
+<h1>Поздравляем Айдара с успешным выступлением на олимпиаде!!!</h1>
+
+<p> <img src="IMG-20210102-WA0001.jpg" width="400" height="480" alt="in KFC" align="right" >
+<h3>Здравствуйте, меня зовут Айдар и мне 7 лет. Учусь я в первом классе. Мои любимые уроки это: Математика,
+    аглийский язык и физкультура. Увлекаюсь футболом и из футболистов мне нравится как играет Роналдо. Люблю рисовать,
+    иногда в этом мне помогает Папа. Вот и все, спасибо за внимание!</h3>
+</p>
+<p><h2>Youtube:</h2> <a href="https://www.youtube.com/watch?v=jWfeQ22fvPo">Indigo</a></p>
+
+<script> type = "text/javascript">
+    const body = document.getElementById('img');
+    let deg = 720;
+    setInterval(() => {
+        deg += 90;
+        body.style.transition = "all 10s"
+        body.style.transform = 'rotateY(${deg}deg)'
+    }, 100)
+</script>
+
+</body>
+</html>
