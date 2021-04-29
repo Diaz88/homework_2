@@ -18,18 +18,19 @@ class Car:
     def save(self):
         try:
             cursor.execute(f"INSERT INTO cars values (?, ?, ?, ?, ?)",
-                       (self.mark, self.model, self.volume, self.year, self.color))
+                       (self.mark, self.model, self.volume, self.year, self.color, self.id))
             connection.commit()
 
         except Exception:
              cursor.execute("CREATE TABLE cars ( mark TEXT, model TEXT, volume INTEGER, year INTEGER, color TEXT, id INTEGER)")
              cursor.execute(f"INSERT INTO cars values (?, ?, ?, ?, ?)",
-               (self.mark, self.model, self.volume, self.year, self.color))
+               (self.mark, self.model, self.volume, self.year, self.color, self.id))
              connection.commit()
 
 
-    def link(self, cls):
-        cursor.execute("CREATE TABLE cars_retailers (cars_id INTEGER, retailers_id INTEGER,FOREIGN KEY (cars_id) references cars(id),FOREIGN KEY (retailers_id) references retailers(id) ")
+    def link(self, Car):
+        self.Car = Car
+        cursor.execute("CREATE TABLE cars_retailers (cars_id INTEGER, retailers_id INTEGER,FOREIGN KEY (cars_id) references cars(id),FOREIGN KEY (retailers_id) references retailers(id)")
         connection.commit()
 
 
