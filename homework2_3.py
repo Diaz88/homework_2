@@ -1,31 +1,46 @@
-class Word:
-    def __init__(self, word, help):
-        self.word = word
-        self.help = help
+import random
 
-    def check_letter(self, letter):
-        return f'{self.word}, {self.help}'
+def Viselica():
+ print ('ВРЕМЯ ИГРАТЬ')
 
-    def __str__(self):
-        return f'hidden words: {self.word}\nhints: {self.help}'
+wordlist =['яблоко', 'апельсин', 'груша', 'пицца', 'сыр', 'бургер', 'каша', 'Лимон']
+secret = random.choice(wordlist)
+guesses = 'яагпсбкл'
+turns = 5
 
-arr = ['hanger','airplane', 'earth']
-arr1 = ['h....r', 'a......e', 'e...h']
-a = Word(arr, arr1)
-print(a)
+while turns > 0:
+     missed = 0
+     for letter in secret:
+         if letter in guesses:
+             print (letter,end=' ')
+         else:
+           print ('_',end=' ')
+           missed= missed + 1
 
-class Game:
-    # 1 - 3hp, 2  - 2hp, 3 - 1hp
-    def __init__(self, round, dif):
-        self.round_num = round
-        self.hp = dif
+     print
 
-    def play(self):
-        return f'the game has begun'
+     if missed == 0:
+         print ('\nТы выиграл!')
+         break
 
+     guess = input('\nугадай еду: ')
+     guesses += guess
 
-diff = input('Select the difficulty level:')
-round_num = input('Next round:')
+     if guess not in secret:
+         turns = turns -1
+         print ('\nNope.')
+         print ('\n',turns, 'больше ходов')
+         if turns < 5: print ('\n  |  ')
+         if turns < 4: print ('  O  ')
+         if turns < 3: print (' /|\ ')
+         if turns < 2: print ('  |  ')
+         if turns < 1: print (' / \ ')
+         if turns == 0:
+             print ('\n\nОтвет', secret)
 
-g = Game(round_num, diff)
-print(g.play())
+playagain = 'да'
+while playagain == 'да':
+    Viselica()
+    print('Ты хочешь снова сыграть? (да или нет)')
+    playagain = input()
+
